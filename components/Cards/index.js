@@ -20,48 +20,40 @@
 
 const attach = document.querySelector('.cards-container')
 
+axios.get(`https://lambda-times-backend.herokuapp.com/articles`)
+    .then(data => {
+        console.log(data)
 
-const test1 = [
-    [{
-        headline: "ES8: The Next Step in the Evolution of Javascript and What it Means For Your Projects",
-        authorPhoto: "./assets/sir.jpg",
-        authorName: "SIR RUFF'N'STUFF"
-    }],
-    [{
-        headline: "ES8: The Next Step in the Evolution of Javascript and What it Means For Your Projects",
-        authorPhoto: "./assets/sir.jpg",
-        authorName: "SIR RUFF'N'STUFF"
-    }],
-    [{
-        headline: "ES8: The Next Step in the Evolution of Javascript and What it Means For Your Projects",
-        authorPhoto: "./assets/sir.jpg",
-        authorName: "SIR RUFF'N'STUFF"
-    }]
-]
+        const javascript = data.data.articles.javascript
+        javascript.forEach(e => {
+            attach.appendChild(Cards(e))
+        })
 
-test1.forEach(e => {
-    e.forEach(e => {
-        console.log(attach.appendChild(Cards(e)))
+
+        const bootstrap = data.data.articles.bootstrap
+        bootstrap.forEach(e => {
+            attach.appendChild(Cards(e))
+        })
+
+        const technology = data.data.articles.technology
+        technology.forEach(e => {
+            attach.appendChild(Cards(e))
+        })
+
+        const jquery = data.data.articles.jquery
+        jquery.forEach(e => {
+            attach.appendChild(Cards(e))
+        })
+
+        const node = data.data.articles.node
+        node.forEach(e => {
+            attach.appendChild(Cards(e))
+        })
     })
-})
 
-// axios.get(`https://lambda-times-backend.herokuapp.com/articles`)
-//     .then(data => {
-//         console.log(data)
-
-//         const articles = data.data
-//         console.log(articles)
-
-//         articles.forEach(e => {
-//             e.forEach(e => {
-//                 console.log(attach.appendChild(Cards(e)))
-//             })
-//         })
-
-//     })
-//     .catch(error => {
-//         console.log(`Connection not found at https://lambda-times-backend.herokuapp.com/articles`, error)
-//     })
+    .catch(error => {
+        console.log(`Connection not found at https://lambda-times-backend.herokuapp.com/articles`, error)
+    })
 
 function Cards(object) {
     // <div class="card">
