@@ -26,6 +26,16 @@ const test1 = [
         headline: "ES8: The Next Step in the Evolution of Javascript and What it Means For Your Projects",
         authorPhoto: "./assets/sir.jpg",
         authorName: "SIR RUFF'N'STUFF"
+    }],
+    [{
+        headline: "ES8: The Next Step in the Evolution of Javascript and What it Means For Your Projects",
+        authorPhoto: "./assets/sir.jpg",
+        authorName: "SIR RUFF'N'STUFF"
+    }],
+    [{
+        headline: "ES8: The Next Step in the Evolution of Javascript and What it Means For Your Projects",
+        authorPhoto: "./assets/sir.jpg",
+        authorName: "SIR RUFF'N'STUFF"
     }]
 ]
 
@@ -38,6 +48,16 @@ test1.forEach(e => {
 // axios.get(`https://lambda-times-backend.herokuapp.com/articles`)
 //     .then(data => {
 //         console.log(data)
+
+//         const articles = data.data
+//         console.log(articles)
+
+//         articles.forEach(e => {
+//             e.forEach(e => {
+//                 console.log(attach.appendChild(Cards(e)))
+//             })
+//         })
+
 //     })
 //     .catch(error => {
 //         console.log(`Connection not found at https://lambda-times-backend.herokuapp.com/articles`, error)
