@@ -7,3 +7,15 @@
 //
 //  The tab component should look like this:
 //    <div class="tab">topic here</div>
+
+axios.get(`https://lambda-times-backend.herokuapp.com/topics`)
+    .then(data => {
+        console.log(`The Connection to lambda-times worked. Processing...`)
+        console.log(data)
+
+        const tabData = data.data
+        console.log(tabData)
+    })
+    .catch(error => {
+        console.log(`The lambda-times data is down, try again later`, error)
+    })
